@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercury HPG</title>
+<meta name="description" content="Mercury High-Performance Group at Oakland University: large-scale data reduction, GPU-accelerated compression, and HPC/cloud/edge cyberinfrastructure.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#c41e3a">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#c41e3a">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#c41e3a">
+<link rel="icon" href="assets/img/mark.svg">
+<link rel="canonical" href="https://mercury-hpg.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+// Applied before first paint so a forced theme never flashes the other one.
+try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t } catch (e) {}
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mercury HPG">
+<meta property="og:image" content="assets/img/mark.svg">
+<meta property="og:description" content="Mercury High-Performance Group at Oakland University: large-scale data reduction, GPU-accelerated compression, and HPC/cloud/edge cyberinfrastructure.">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav aria-label="Primary">
+    <ul class="banner">
+      <li class="brand-cell">
+        <a href="index.html" aria-current="page">
+          <span class="idx">Mercury</span>
+          <span class="label">Hg</span>
+        </a>
+      </li>
+      <li><a href="team.html"><span class="idx">01</span><span class="label">Team</span></a></li>
+      <li><a href="research.html"><span class="idx">02</span><span class="label">Research</span></a></li>
+      <li><a href="projects.html"><span class="idx">03</span><span class="label">Projects</span></a></li>
+      <li><a href="events.html"><span class="idx">04</span><span class="label">Events</span></a></li>
+      <li><a class="ext" href="https://jti.one/"><span class="idx"></span><span class="label">PI</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-id">
+        <img class="hero-mark" src="assets/img/hg-logo.png" alt="Mercury (Hg), element 80" width="1000" height="1000">
+        <div>
+          <h1>Mercury High-Performance Group</h1>
+          <p class="role">PI: Jiannan Tian, <span class="degree">PhD</span></p>
+        </div>
+      </div>
+
+      <div class="bio">
+        <p><strong>Mercury High-Performance Group</strong> is a research group at Oakland
+          University, led by <a href="https://jti.one/">Jiannan Tian</a>. We work on
+          large-scale data reduction, GPU-accelerated compression, and the cyberinfrastructure
+          that carries scientific data between HPC, cloud, and edge.</p>
+        <p>Our software is open source. We also host workshops that bring this community
+          together: see <a href="events.html">Events</a>.</p>
+      </div>
+
+      <div class="callout">
+        <p><span class="callout-label">Joining</span> We are recruiting Ph.D. students. Reach out to
+          <span class="email">jtian+phdstudy'at'oakland.edu</span> with a brief introduction, CV,
+          and academic transcripts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="section-head prose">
+        <h2>Latest news</h2>
+      </div>
+      <ul class="news">
+        <li><span class="when">Upcoming</span><p>We are hosting <a href="https://mercury-hpg.github.io/IWBDR-6/">IWBDR-6</a>: The 6th International Workshop on Big Data Reduction, with BigData '26.</p></li>
+        <li><span class="when">Upcoming</span><p>We are hosting the <a href="https://echo-workshop.github.io">ECHO Workshop</a>: The 1st International Workshop on Edge-Cloud-HPC Operational Continuum, in conjunction with SC '26.</p></li>
+        <li><time datetime="2026-02">2026-02</time><p>One paper accepted at ICS '26 (1st cycle).</p></li>
+        <li><time datetime="2026-01">2026-01</time><p>Two papers accepted at IPDPS '26.</p></li>
+        <li><time datetime="2025-06">2025-06</time><p>Three papers accepted at SC '25 (acc. rate: 21.2%).</p></li>
+        <li><time datetime="2025-06">2025-06</time><p>Our NSF CSSI project <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2609480">SGCC</a> was awarded. Many thanks to NSF!</p></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© Mercury High-Performance Group</span>
+    <div class="theme-switch quiet" role="group" aria-label="Colour theme">
+      <button type="button" data-theme-set="light">Light</button>
+      <button type="button" data-theme-set="dark">Dark</button>
+      <button type="button" data-theme-set="auto">Auto</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+// light/dark/auto. `auto` removes the attribute and lets the system's own
+// prefers-color-scheme decide, which is why it is the default rather than a
+// third palette.
+(() => {
+  const root = document.documentElement
+  const btns = [...document.querySelectorAll('[data-theme-set]')]
+  const read = () => { try { return localStorage.getItem('theme') || 'auto' } catch (e) { return 'auto' } }
+  const apply = (t) => {
+    if (t === 'auto') delete root.dataset.theme
+    else root.dataset.theme = t
+    for (const b of btns) b.setAttribute('aria-pressed', String(b.dataset.themeSet === t))
+  }
+  apply(read())
+  for (const b of btns) b.addEventListener('click', () => {
+    const t = b.dataset.themeSet
+    try { localStorage.setItem('theme', t) } catch (e) {}
+    apply(t)
+  })
+})()
+</script>
+
+</body>
+</html>
